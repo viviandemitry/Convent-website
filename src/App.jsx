@@ -5,6 +5,7 @@ import Helping from './views/Helping/view';
 import Events from './views/Events/view';
 import Products from './views/Products/view';
 import Contact from './views/Contact/view';
+import Login from './views/Login/view';
 
 
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
       <Route path="/eventos" element={<Events/>}/>
       <Route path="/produtos" element={<Products/>}/>
       <Route path="/contato" element={<Contact/>}/>
+      <Route path="/login" element={<Login/>}/>
    </Routes>
   );
 }

@@ -28,6 +28,10 @@ export default function Header() {
         navigate("/contato")
     }
 
+    function goLogin(){
+        navigate("/login")
+    }
+
     return (
         <Styles.ContainerMain>
             <img src={Logo} alt="logo" />
@@ -50,7 +54,7 @@ export default function Header() {
                     Contato
                 </Styles.Button>
             </Styles.AllBottons>
-            <Styles.LoginButton>
+            <Styles.LoginButton onClick={goLogin}>
                 Login
             </Styles.LoginButton>
         </Styles.ContainerMain>
