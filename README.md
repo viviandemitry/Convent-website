@@ -1,7 +1,7 @@
 # Convent Website
 This project is being created to help them raise funds for their purposes.
 
-Check this project here: (https://convent-website.vercel.app/contato)
+Check this project here: (https://convent-website.vercel.app)
 
 Design
 + Figma
