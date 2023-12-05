@@ -19,8 +19,8 @@ export const ContainerMain = styled.div`
 export const ContentContainer = styled.div`
     display:flex;
     width: 100%;
-    height: ${px2vw(550)};
-    margin-top:${px2vw(200)};
+    height: ${px2vw(570)};
+    margin-top:${px2vw(160)};
     background-color: #FFF;
 `
 

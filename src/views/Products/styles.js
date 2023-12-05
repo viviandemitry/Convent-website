@@ -21,8 +21,8 @@ export const ContentContainer = styled.div`
     display:flex;
     flex-direction: column;
     width: 100%;
-    height: ${px2vw(550)};
-    margin-top:${px2vw(200)};
+    height: ${px2vw(570)};
+    margin-top:${px2vw(160)};
     background-color: #FFF;
 `
 
@@ -33,7 +33,7 @@ export const TextContainer = styled.div`
 
 export const Title = styled.h2`
     margin-left: ${px2vw(50)};
-    margin-top: ${px2vw(50)};
+    margin-top: ${px2vw(30)};
     color: #5A9DCD;
 
     font-family: Bree Serif;
@@ -56,7 +56,7 @@ export const Text = styled.p`
 `
 
 export const ProductTitle = styled.p`
-    width: ${px2vw(200)};
+    width: ${px2vw(230)};
     margin-left: 0;
     margin-top: ${px2vw(15)};
     color: #011F66;
@@ -67,7 +67,10 @@ export const ProductTitle = styled.p`
     font-weight: 400;
     line-height: normal;
 `
-
+export const Button = styled.button`
+    border: none;
+    shadow: none;
+`
 export const ImgContainer = styled.div`
     display: flex;
     

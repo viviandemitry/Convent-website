@@ -89,26 +89,35 @@ export default function Events() {
                 </Styles.LeftContainer>
                 <Styles.RightContainer>
                     <Styles.Title>
-                        Eventos
+                     Próximos Eventos
                     </Styles.Title>
                     <Styles.Text>
-                    Dia 29/09/23 - Feira do pastel
-                    Local: Rua ...- São Paulo
-                    Horário: 10:00 às 17:00.
+                    <Styles.EventTitle>
+                    Feira do pastel
+                    </Styles.EventTitle>  
+                    Dia 29/09/23 à 07/10/23 <br /> 
+                    Horário: 10:00 às 17:00 <br /> 
+                    Local: Rua ...- São Paulo <br /> 
                     Sobre o evento: ......
                     </Styles.Text> <br />
                     <Styles.Text>
-                    Dia 29/09/23 - Feira do pastel
-                    Local: Rua ...- São Paulo
-                    Horário: 10:00 às 17:00.
+                    <Styles.EventTitle>
+                    Feira do pastel
+                    </Styles.EventTitle>  
+                    Dia 29/09/23 à 07/10/23 <br /> 
+                    Horário: 10:00 às 17:00 <br /> 
+                    Local: Rua ...- São Paulo <br /> 
                     Sobre o evento: ......
                     </Styles.Text> <br />
                     <Styles.Text>
-                    Dia 29/09/23 - Feira do pastel
-                    Local: Rua ...- São Paulo
-                    Horário: 10:00 às 17:00.
+                    <Styles.EventTitle>
+                    Feira do pastel
+                    </Styles.EventTitle>  
+                    Dia 29/09/23 à 07/10/23 <br /> 
+                    Horário: 10:00 às 17:00 <br /> 
+                    Local: Rua ...- São Paulo <br /> 
                     Sobre o evento: ......
-                    </Styles.Text>
+                    </Styles.Text> <br />
                 </Styles.RightContainer>
             </Styles.ContentContainer>
         </Styles.ContainerMain>
