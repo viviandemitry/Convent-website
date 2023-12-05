@@ -20,8 +20,8 @@ export const ContentContainer = styled.div`
     display:flex;
     flex-direction: row;
     width: 100%;
-    height: ${px2vw(550)};
-    margin-top:${px2vw(200)};
+    height: 80%;
+    margin-top:${px2vw(160)};
     background-color: #FFF;
 
 `
@@ -52,10 +52,21 @@ export const Title = styled.h2`
     line-height: normal;
 `
 
+export const EventTitle = styled.p`
+    margin-top: ${px2vw(10)};
+    color: #000D3F;
+
+    font-family: Segoe UI;
+    font-size: ${px2vw(22)};
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+`
+
+
 export const Text = styled.p`
     width: 80%;
     padding: 0;
-    margin: 0;
 
     font-size: ${px2vw(20)};
     

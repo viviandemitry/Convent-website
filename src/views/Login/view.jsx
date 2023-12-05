@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as Styles from './styles'
 import Header from '../../components/Header'
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate()
+
+    function handleEmail(e){
+        setEmail(e.target.value)
+    }
+
+    function handlePassword(e){
+        setPassword(e.target.value)
+    }
+
+    async function login(){
+        const data = {email, password}
+        const response = await fetch('http://localhost:3000', {
+            method: 'POST',
+            headers: {'Content-type': 'application/json',},
+            body: JSON.stringify(data),
+        })
+        const dataApi = await response.json()
+        console.log(dataApi)
+        navigate("/menu")
+
+    }
+
+    // function handleLogin(){
+    //     setIsRegister(true);
+    //   }
+
         return (
             <Styles.ContainerMain>
                 <Header />
@@ -13,13 +44,16 @@ export default function Login() {
                     <Styles.InputContainer>
                         <Styles.InputLabel>
                             EMAIL
-                            <Styles.InputContent type="text" placeholder="Escreva seu e-mail" />
+                            <Styles.InputContent type="text" placeholder="Escreva seu e-mail" onChange={handleEmail} value={email} />
                         </Styles.InputLabel>
                         <Styles.InputLabel>
-                            PASSWORD 
-                            <Styles.InputContent type="password" placeholder="Escreva sua senha" />
+                            SENHA 
+                            <Styles.InputContent type="password" placeholder="Escreva sua senha" onChange={handlePassword} value={password} />
                         </Styles.InputLabel>
                     </Styles.InputContainer>
+                    <Styles.SubmitButton type="button" onClick={login} >
+                        ENTRAR
+                    </Styles.SubmitButton>
                 </Styles.ContentContainer>
             </Styles.ContainerMain>
 

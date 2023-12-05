@@ -37,25 +37,25 @@ export default function Header() {
             <img src={Logo} alt="logo" />
             <Styles.AllBottons>
                 <Styles.FirstBotton>
-                    <Styles.Button onClick={goHome}>
+                    <Styles.Button to="/">
                         Sobre nós
                     </Styles.Button>
                 </Styles.FirstBotton>
-                <Styles.Button onClick={goHelp}>
+                <Styles.Button to="/comoajudar">
                     Como ajudar
                 </Styles.Button>
-                <Styles.Button onClick={goEvents}>
+                <Styles.Button to="/eventos">
                     Eventos
                 </Styles.Button>
-                <Styles.Button onClick={goProducts}>
+                <Styles.Button to="/produtos">
                     Produtos
                 </Styles.Button>
-                <Styles.Button onClick={goContact}>
+                <Styles.Button to="/contato">
                     Contato
                 </Styles.Button>
             </Styles.AllBottons>
             <Styles.LoginButton onClick={goLogin}>
-                Login
+                Admin
             </Styles.LoginButton>
         </Styles.ContainerMain>
     )
