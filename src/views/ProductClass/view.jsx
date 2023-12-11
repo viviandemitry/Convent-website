@@ -6,15 +6,14 @@ import ProdutosNatal from "../../assets/images/vela-de-natal.png";
 import ProdutosPascoa from "../../assets/images/guirlanda-pascoa.png";
 import Geleias from "../../assets/images/geleias.png";
 import GeneralProd from '../../components/GeneralProd';
-import { Navigate, useNavigate } from 'react-router-dom';
 
 
-export default function Products() {
+export default function ProductClass() {
 
-        const navigate = useNavigate();
+        const [isGeneralProd, setIsGeneralProd] = useState(false);
 
-        function handleProd(category){
-            navigate(`/categoria/${category}`)
+        function handleGeneralProd(){
+            setIsGeneralProd(true)
         }
 
         return (
@@ -30,32 +29,34 @@ export default function Products() {
                        e outros fazemos sob encomenda. <br /><br />Entre em contato conosco para saber mais!
                     </Styles.Text>
                 </Styles.TextContainer>
-                <Styles.ImgContainer>
-                        <Styles.ProductContainer onClick={() => handleProd("Geral")}>
+                {/* <Styles.ImgContainer>
+                    <Styles.Button type="button" onClick={handleGeneralProd}>
+                        <Styles.ProductContainer>
                             <img src={ProdutosGerais} alt="Produtos Gerais" />
                             <Styles.ProductTitle>
                                 Produtos em geral
                             </Styles.ProductTitle>
                         </Styles.ProductContainer>
-                    <Styles.ProductContainer onClick={() => handleProd("Natal")}>
+                    </Styles.Button>
+                    <Styles.ProductContainer>
                         <img src={ProdutosNatal} alt="Produtos Natal" />
                         <Styles.ProductTitle>
                             Produtos Natalinos
                         </Styles.ProductTitle>
                     </Styles.ProductContainer>
-                    <Styles.ProductContainer onClick={() => handleProd("Pascoa")}>
+                    <Styles.ProductContainer>
                         <img src={ProdutosPascoa} alt="Produtos Pascoa" />
                         <Styles.ProductTitle>
                             Produtos para Páscoa
                         </Styles.ProductTitle>
                     </Styles.ProductContainer>
-                    <Styles.ProductContainer onClick={() => handleProd("Geleias")}>
+                    <Styles.ProductContainer>
                         <img src={Geleias} alt="Geleias" />
                         <Styles.ProductTitle>
                             Geleias e antepastos
                         </Styles.ProductTitle>
                     </Styles.ProductContainer>
-                </Styles.ImgContainer> 
+                </Styles.ImgContainer>  */}
             </Styles.ContentContainer>
             </Styles.ContainerMain>
 

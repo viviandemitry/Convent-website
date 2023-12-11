@@ -19,7 +19,7 @@ export default function Dashboard() {
                         Menu de Opções
                     </Styles.Title>
                     <Styles.SubmitButton type="button" onClick={addEvent}>
-                        Cadastrar/Alterar Eventos
+                        Cadastrar/Excluir Eventos
                     </Styles.SubmitButton>
                     <Styles.SubmitButton type="button">
                         Adicionar/Excluir Produtos

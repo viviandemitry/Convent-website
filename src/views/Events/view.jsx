@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Styles from './styles'
 import Header from '../../components/Header'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
@@ -71,9 +71,26 @@ const myEventsList = [
       'start': new Date(2015, 3, 12, 20, 0, 0, 0),
       'end': new Date(2015, 3, 12, 21, 0, 0, 0)
     },
+  
   ];
 
+
+
 export default function Events() {
+
+        const [listEvent, setListEvent] = useState([]);
+
+        async function getEvent(){
+            const res = await fetch('http://localhost:3000/events')
+            const data = await res.json() 
+            setListEvent(data)
+        } 
+
+        useEffect(() => {
+          getEvent()
+        }, [])
+
+
         return (
             <Styles.ContainerMain>
             <Header />
@@ -81,7 +98,7 @@ export default function Events() {
                 <Styles.LeftContainer>
                   <Calendar
                     localizer={localizer}
-                    events={myEventsList}
+                    events={listEvent}
                     startAccessor="start"
                     endAccessor="end"
                     style={{ height: 500 }}
