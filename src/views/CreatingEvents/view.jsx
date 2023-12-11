@@ -7,43 +7,57 @@ import { useNavigate, useLocation } from 'react-router-dom';
 export default function CreatingEvents() {
 
     const navigate = useNavigate();
-    const [name, setName] = useState('');
-    const [date, setDate] = useState('');
-    const [address, setAddress] = useState('');
-    const [about, setAbout] = useState('');
+    const [eventName, setEventName] = useState('');
+    const [initialDate, setInitialDate] = useState('');
+    const [finalDate, setFinalDate] = useState('');
+    const [initialTime, setInitialTime] = useState('');
+    const [finalTime, setFinalTime] = useState('');
+    const [eventAddress, setEventAddress] = useState('');
+    const [eventDescription, setEventDescription] = useState('');
 
-    function handleName(e){
-        setName(e.target.value);
+    function handleEventName(e){
+       setEventName(e.target.value);
       }
     
-      function handleDate(e){
-        setDate(e.target.value);
+      function handleInitialDate(e){
+        setInitialDate(e.target.value);
       }
 
-      function handleTime(e){
-        setDate(e.target.value);
+      function handleFinalDate(e){
+        setFinalDate(e.target.value);
+      }
+
+      function handleInitialTime(e){
+        setInitialTime(e.target.value);
+      }
+
+      function handleFinalTime(e){
+        setFinalTime(e.target.value);
       }
     
-      function handleAddress(e){
-        setAddress(e.target.value);
+      function handleEventAddress(e){
+        setEventAddress(e.target.value);
       }
 
-      function handleAbout(e){
-        setAbout(e.target.value);
+      function handleEventDescription(e){
+        setEventDescription(e.target.value);
       }
 
       async function handleClick(e){
-            // e.preventDefault()
-            // const data = {
-            //     name,
-            //     date,
-            //     address,
-            //     about
-            // }
-            // const response = await fetch('https://api-express-mongodb.onrender.com/api/cadastrar', {method: 'POST', headers: {'Content-Type': 'application/json',},
-            // body: JSON.stringify(data),})
-            // console.log(response)
-            // props.setIsRegister(false)
+            e.preventDefault()
+            const data = {
+                eventName,
+                initialDate,
+                finalDate,
+                initialTime,
+                finalTime,
+                eventAddress,
+                eventDescription
+            }
+            const response = await fetch('http://localhost:3000/create-event', {method: 'POST', headers: {'Content-Type': 'application/json',},
+            body: JSON.stringify(data),})
+            console.log(response)
+            
           }
 
     return (
@@ -57,33 +71,33 @@ export default function CreatingEvents() {
               <Styles.LeftSide>
                 <Styles.InputLabel>
                   Nome do Evento
-                  <Styles.InputContent type="text" placeholder="Escreva o nome do Evento" onChange={handleName} />
+                  <Styles.InputContent type="text" placeholder="Escreva o nome do Evento" onChange={handleEventName} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Data de início
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleDate} />
+                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleInitialDate} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Data final
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleDate} />
+                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleFinalDate} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Endereço
-                  <Styles.InputContent type="texto" placeholder="Escreva o endereço" onChange={handleAddress} />
+                  <Styles.InputContent type="texto" placeholder="Escreva o endereço" onChange={handleEventAddress} />
                 </Styles.InputLabel>
               </Styles.LeftSide>
               <Styles.RighttSide>
                 <Styles.InputLabel>
                   Horário de início
-                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleTime} />
+                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleInitialTime} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Horário do fim
-                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleTime} />
+                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleFinalTime} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Descrição 
-                  <Styles.InputContent type="texto" placeholder="Descreva o evento" onChange={handleAbout} />
+                  <Styles.InputContent type="texto" placeholder="Descreva o evento" onChange={handleEventDescription} />
                 </Styles.InputLabel>
                 <Styles.SubmitButton type="submit" onClick={handleClick}>
                   CRIAR EVENTO
