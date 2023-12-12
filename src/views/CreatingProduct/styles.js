@@ -3,7 +3,7 @@ import px2vw from "../../utils/px2vw";
 import { device } from "../../utils/brakePoints";
 
 export const ContainerMain = styled.div`
-    background-color: white;
+    background-color: #FFF;
     width: 100vw;
     height: 100%;
     margin: 0;
@@ -18,12 +18,13 @@ export const Header = styled.div`
     justify-content: left;
     padding-top: ${px2vw(20)};
 `
+
 export const FormContent = styled.form`
     background: #000D3F;
     flex-direction: column;
     width: 100%;
-    height: 80%;
 `
+
 export const Titles = styled.div`
     display: flex;
 `
@@ -36,27 +37,35 @@ export const Title = styled.h2`
 `
 
 export const SecondTitle = styled.h2`
-    margin-left: ${px2vw(90)};
+    margin-left: ${px2vw(10)};
     padding-top: ${px2vw(10)};
     color:#FFF;
 `
 
 export const ContentContainer = styled.div`
     display:flex;
+    height: ${px2vw(500)};
 `
-export const EventList = styled.div`
-        background-color: #FFF;
-        width: 30%;
-        height: ${px2vw(350)};
-        overflow-x: auto;
-        align-items: center;
-        justify-content: center;
-        margin-left: ${px2vw(100)};
-        padding-left: ${px2vw(10)};
-        padding-top: ${px2vw(30)};
-        padding-bottom: ${px2vw(50)};
+
+export const LeftSide = styled.div`
+    background-color: #FFF;
+    width: 25%;
+    height: ${px2vw(300)};
+    overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+    margin-left: ${px2vw(100)};
+    padding-left: ${px2vw(30)};
+    padding-bottom: ${px2vw(50)};
 `
-export const Event = styled.div`
+
+export const RighttSide = styled.div`
+    background-color: #000D3F;
+    width: 30%;
+    padding-left: ${px2vw(50)};
+    padding-bottom: ${px2vw(50)};
+`
+export const Product = styled.div`
     display:flex;
     color: #000D3F;
     align-items: center;
@@ -74,27 +83,9 @@ export const DeleteText = styled.p`
     margin-left: ${px2vw(-25)};
     cursor:pointer;
 `
-export const LeftSide = styled.div`
-    background-color: #000D3F;
-    width: 30%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    padding-left: ${px2vw(100)};
-    padding-bottom: ${px2vw(50)};
-`
-
-export const RighttSide = styled.div`
-    background-color: #000D3F;
-    width: 30%;
-    height: 100%;
-    padding-left: ${px2vw(10)};
-    padding-bottom: ${px2vw(50)};
-`
-
 export const InputContent = styled.input`
     border-radius: ${px2vw(5)};
-    width: ${px2vw(300)};
+    width: 100%;
     height: ${px2vw(36)};
     flex-shrink: 0;
     margin-top: ${px2vw(5)};
@@ -104,6 +95,17 @@ export const InputContent = styled.input`
     background: #FFF;
     box-shadow: 2px 1px 64px 0px rgba(144, 119, 214, 0.52);
     font-size: ${px2vw(15)};
+
+    @media ${device.mobileM}{
+        width: ${px2vw(600)};
+        height: ${px2vw(70)};
+
+        font-size: ${px2vw(30)};   
+    }
+`
+export const InputContentFile = styled.input`
+    margin-top: ${px2vw(5)};
+    margin-bottom: ${px2vw(48)};
 
     @media ${device.mobileM}{
         width: ${px2vw(600)};
@@ -130,6 +132,7 @@ export const InputLabel = styled.label`
         margin-top: ${px2vw(60)};
     }
 `
+
 export const BackButton = styled.button`
     border: none;
     margin-left: ${px2vw(-25)};
@@ -142,11 +145,12 @@ export const BackButton = styled.button`
     text-decoration: underline;
 
 `
+
 export const SubmitButton = styled.button`
     border-radius: ${px2vw(9)};
     border: none;
     background: #FFF;
-    margin-top: ${px2vw(5)};
+    margin-top: ${px2vw(50)};
 
     display: flex;
     width: ${px2vw(282)};

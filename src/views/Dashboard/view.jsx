@@ -11,6 +11,10 @@ export default function Dashboard() {
         navigate("/eventosadm")
     }
 
+    function addProduct(){
+        navigate("/produtosadm")
+    }
+
         return (
             <Styles.ContainerMain>
                 <Header />
@@ -21,7 +25,7 @@ export default function Dashboard() {
                     <Styles.SubmitButton type="button" onClick={addEvent}>
                         Cadastrar/Excluir Eventos
                     </Styles.SubmitButton>
-                    <Styles.SubmitButton type="button">
+                    <Styles.SubmitButton type="button" onClick={addProduct}>
                         Adicionar/Excluir Produtos
                     </Styles.SubmitButton>
                     <Styles.SubmitButton type="button">

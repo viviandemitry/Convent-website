@@ -68,9 +68,9 @@ export const ProductTitle = styled.p`
     line-height: normal;
     cursor:pointer;
 `
-export const Button = styled.button`
+export const BackToProducts = styled.button`
     border: none;
-    shadow: none;
+    cursor:pointer;
 `
 export const ImgContainer = styled.div`
     display: flex;

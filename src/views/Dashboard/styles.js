@@ -50,6 +50,7 @@ export const SubmitButton = styled.button`
     border: none;
     background: #000D3F;
     margin-top: ${px2vw(5)};
+    cursor:pointer;
 
     display: flex;
     width: ${px2vw(400)};

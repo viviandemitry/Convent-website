@@ -9,6 +9,7 @@ import Login from './views/Login/view';
 import CreatingEvents from './views/CreatingEvents/view';
 import Dashboard from './views/Dashboard/view';
 import ProductClass from './views/ProductClass/view';
+import CreatingProduct from './views/CreatingProduct/view';
 
 
 import './App.css';
@@ -25,6 +26,7 @@ function App() {
       <Route path="/eventosadm" element={<CreatingEvents/>}/>
       <Route path="/menu" element={<Dashboard/>}/>
       <Route path="/categoria/:category" element={<ProductClass/>}/>
+      <Route path="/produtosadm" element={<CreatingProduct/>}/>
    </Routes>
   );
 }

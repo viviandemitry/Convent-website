@@ -17,30 +17,31 @@ export const ContainerMain = styled.div`
 `
 
 export const ContentContainer = styled.div`
-    display:flex;
-    flex-direction: row;
+    flex-direction: column; 
     width: 100%;
-    height: 80%;
+    height: 100%;
     margin-top:${px2vw(160)};
     background-color: #FFF;
 
 `
 
 export const LeftContainer = styled.div`
-    display:flex;
-    flex-direction: column;
     width: 70%;
     margin-left: ${px2vw(100)};
 `
 
 export const RightContainer = styled.div`
-    display:flex;
-    flex-direction: column;
+    flex-direction: column; 
     width: 50%;
     margin-top: ${px2vw(10)};
     margin-left: ${px2vw(100)};
 `
-
+export const ContainerTop = styled.div`
+   display:flex;
+`
+export const ContainerBottom = styled.div`
+   display:flex;
+`
 export const Title = styled.h2`
     margin-top: ${px2vw(10)};
     color: #5A9DCD;
