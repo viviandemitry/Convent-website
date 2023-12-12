@@ -39,8 +39,18 @@ export const RightContainer = styled.div`
 export const ContainerTop = styled.div`
    display:flex;
 `
+
+export const ContainerMidle = styled.div`
+   width: 100%;
+   height: 5%;
+   background-color: #000D3F;
+`
+
 export const ContainerBottom = styled.div`
-   display:flex;
+   flex-direction: column; 
+   margin-left: ${px2vw(100)};
+   margin-top: ${px2vw(70)};
+   padding-bottom: ${px2vw(70)};
 `
 export const Title = styled.h2`
     margin-top: ${px2vw(10)};
@@ -51,6 +61,20 @@ export const Title = styled.h2`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+`
+
+export const ContainerImg = styled.div`
+    display:flex;
+
+    img {
+        padding-bottom: 50px;
+    }
+`
+
+export const TextImg = styled.div`
+   flex-direction: column; 
+   padding-left: ${px2vw(40)};
+   width: 50%;
 `
 
 export const EventTitle = styled.p`

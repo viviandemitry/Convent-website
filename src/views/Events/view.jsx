@@ -83,14 +83,35 @@ export default function Events() {
                       </Styles.Text> <br />
                   </Styles.RightContainer>
                 </Styles.ContainerTop>
+                <Styles.ContainerMidle>
+
+                </Styles.ContainerMidle>
                 <Styles.ContainerBottom>
-                  <img src={ImgHome} alt="Image Home" />
-                  <Styles.Text>
-                        <Styles.EventTitle>
-                        Feira do pastel
-                        </Styles.EventTitle>   
-                        Sobre o evento: ......
-                    </Styles.Text>
+                      < Styles.Title>
+                       Nossos Eventos Tradicionais
+                      </Styles.Title>
+                  <Styles.ContainerImg>
+                    <img src={ImgHome} alt="Image Home" />
+                        <Styles.TextImg>
+                          <Styles.EventTitle>
+                          Feira do pastel
+                          </Styles.EventTitle>   
+                          <Styles.Text>
+                            A feira do pastel foi organizada pelo convento no mês de julio, fizemos várias barracas com comidas deliciosas como pastel, cuzcuz, brigadeiro, foi incrível!
+                          </Styles.Text>
+                        </Styles.TextImg>
+                    </Styles.ContainerImg>
+                    <Styles.ContainerImg>
+                    <img src={ImgHome} alt="Image Home" />
+                        <Styles.TextImg>
+                          <Styles.EventTitle>
+                          Feira do pastel
+                          </Styles.EventTitle>   
+                          <Styles.Text>
+                            A feira do pastel foi organizada pelo convento no mês de julio, fizemos várias barracas com comidas deliciosas como pastel, cuzcuz, brigadeiro, foi incrível!
+                          </Styles.Text>
+                        </Styles.TextImg>
+                    </Styles.ContainerImg>
                 </Styles.ContainerBottom>
             </Styles.ContentContainer>
         </Styles.ContainerMain>

@@ -82,23 +82,6 @@ export default function ProductClass() {
                     </SwiperSlide>
                     ))}
       </Swiper>
-            {/* <SwiperSlide>
-                    <Styles.ProductContainer>
-                        <img src={ProdutosGerais} alt="Produtos Gerais" />
-                        <Styles.ProductTitle>
-                            Produtos em geral
-                        </Styles.ProductTitle>
-                    </Styles.ProductContainer>
-            </SwiperSlide>
-            <SwiperSlide>
-                    <Styles.ProductContainer>
-                        <img src={ProdutosGerais} alt="Produtos Gerais" />
-                        <Styles.ProductTitle>
-                            Produtos em geral
-                        </Styles.ProductTitle>
-                    </Styles.ProductContainer>
-            </SwiperSlide>
-        </Swiper> */}
                 </Styles.ImgContainer>
             </Styles.ContentContainer>
             </Styles.ContainerMain>

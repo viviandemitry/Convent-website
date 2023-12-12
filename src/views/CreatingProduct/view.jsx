@@ -88,7 +88,7 @@ export default function CreatingProduct() {
           <Styles.FormContent>
           <Styles.Titles>
               <Styles.Title>
-                Lista de evento:
+                Lista de Produtos:
               </Styles.Title>
               <Styles.SecondTitle>
                 Adicione novo produto:
