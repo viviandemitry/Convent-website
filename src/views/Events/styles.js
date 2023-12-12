@@ -17,30 +17,41 @@ export const ContainerMain = styled.div`
 `
 
 export const ContentContainer = styled.div`
-    display:flex;
-    flex-direction: row;
+    flex-direction: column; 
     width: 100%;
-    height: 80%;
+    height: 100%;
     margin-top:${px2vw(160)};
     background-color: #FFF;
 
 `
 
 export const LeftContainer = styled.div`
-    display:flex;
-    flex-direction: column;
     width: 70%;
     margin-left: ${px2vw(100)};
 `
 
 export const RightContainer = styled.div`
-    display:flex;
-    flex-direction: column;
+    flex-direction: column; 
     width: 50%;
     margin-top: ${px2vw(10)};
     margin-left: ${px2vw(100)};
 `
+export const ContainerTop = styled.div`
+   display:flex;
+`
 
+export const ContainerMidle = styled.div`
+   width: 100%;
+   height: 5%;
+   background-color: #000D3F;
+`
+
+export const ContainerBottom = styled.div`
+   flex-direction: column; 
+   margin-left: ${px2vw(100)};
+   margin-top: ${px2vw(70)};
+   padding-bottom: ${px2vw(70)};
+`
 export const Title = styled.h2`
     margin-top: ${px2vw(10)};
     color: #5A9DCD;
@@ -50,6 +61,20 @@ export const Title = styled.h2`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+`
+
+export const ContainerImg = styled.div`
+    display:flex;
+
+    img {
+        padding-bottom: 50px;
+    }
+`
+
+export const TextImg = styled.div`
+   flex-direction: column; 
+   padding-left: ${px2vw(40)};
+   width: 50%;
 `
 
 export const EventTitle = styled.p`

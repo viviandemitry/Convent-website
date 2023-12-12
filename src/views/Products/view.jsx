@@ -5,7 +5,6 @@ import ProdutosGerais from "../../assets/images/produtos-gerais.png";
 import ProdutosNatal from "../../assets/images/vela-de-natal.png";
 import ProdutosPascoa from "../../assets/images/guirlanda-pascoa.png";
 import Geleias from "../../assets/images/geleias.png";
-import GeneralProd from '../../components/GeneralProd';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 

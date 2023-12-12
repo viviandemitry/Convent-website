@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import * as Styles from './styles';
 import Logo from "../../assets/images/logo.png";
+import Produto from "../../assets/images/produtos-gerais.png";
+import IconeDelete from "../../assets/icons/delete-icon.png";
 import IconLeft from "../../assets/icons/arrow-left.png"
-import IconDelete from "../../assets/icons/delete-icon.png";
-import IconCalendar from "../../assets/icons/calendar-icon.png";
 import { useNavigate, useLocation } from 'react-router-dom';
+import Select from 'react-select';
 
 
-export default function CreatingEvents() {
+export default function CreatingProduct() {
 
     const navigate = useNavigate();
     const [eventName, setEventName] = useState('');
@@ -67,6 +68,14 @@ export default function CreatingEvents() {
             
           }
 
+          
+            const options = [
+              { value: "Produtos em geral", label: "Produtos em geral" },
+              { value: "Produtos Natalinos", label: "Produtos Natalinos" },
+              { value: "Produtos para Páscoa", label: "Produtos para Páscoa" },
+              { value: "Geleias e Antepastos", label: "Geleias e Antepastos" },
+            ];
+
     return (
         <Styles.ContainerMain>
             <Styles.Header>
@@ -75,105 +84,94 @@ export default function CreatingEvents() {
               <Styles.BackButton type="buttom" onClick={handleBack}>
                   Voltar ao menu
               </Styles.BackButton>
-              </Styles.Header>
+          </Styles.Header>
           <Styles.FormContent>
-            <Styles.Titles>
+          <Styles.Titles>
               <Styles.Title>
-                Lista de evento:
+                Lista de Produtos:
               </Styles.Title>
               <Styles.SecondTitle>
-                Crie um novo evento:
+                Adicione novo produto:
               </Styles.SecondTitle>
             </Styles.Titles>
             <Styles.ContentContainer>
-              <Styles.EventList>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-              </Styles.EventList>
               <Styles.LeftSide>
-                <Styles.InputLabel>
-                  Nome do Evento
-                  <Styles.InputContent type="text" placeholder="Escreva o nome do Evento" onChange={handleEventName} />
-                </Styles.InputLabel>
-                <Styles.InputLabel>
-                  Data de início
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleInitialDate} />
-                </Styles.InputLabel>
-                <Styles.InputLabel>
-                  Data final
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleFinalDate} />
-                </Styles.InputLabel>
-                <Styles.InputLabel>
-                  Endereço
-                  <Styles.InputContent type="texto" placeholder="Escreva o endereço" onChange={handleEventAddress} />
-                </Styles.InputLabel>
+                <Styles.Product>
+                   <img src={Produto} alt="logo" />
+                   Produto 1
+                   <img src={IconeDelete} alt="logo" />
+                   <Styles.DeleteText>
+                    Excluir
+                   </Styles.DeleteText>
+                 </Styles.Product>
+                 <Styles.Product>
+                   <img src={Produto} alt="logo" />
+                   Produto 1
+                   <img src={IconeDelete} alt="logo" />
+                   <Styles.DeleteText>
+                    Excluir
+                   </Styles.DeleteText>
+                 </Styles.Product>
+                 <Styles.Product>
+                   <img src={Produto} alt="logo" />
+                   Produto 1
+                   <img src={IconeDelete} alt="logo" />
+                   <Styles.DeleteText>
+                    Excluir
+                   </Styles.DeleteText>
+                 </Styles.Product>
+                 <Styles.Product>
+                   <img src={Produto} alt="logo" />
+                   Produto 1
+                   <img src={IconeDelete} alt="logo" />
+                   <Styles.DeleteText>
+                    Excluir
+                   </Styles.DeleteText>
+                 </Styles.Product>
+                 <Styles.Product>
+                   <img src={Produto} alt="logo" />
+                   Produto 1
+                   <img src={IconeDelete} alt="logo" />
+                   <Styles.DeleteText>
+                    Excluir
+                   </Styles.DeleteText>
+                 </Styles.Product>
+                 <Styles.Product>
+                   <img src={Produto} alt="logo" />
+                   Produto 1
+                   <img src={IconeDelete} alt="logo" />
+                   <Styles.DeleteText>
+                    Excluir
+                   </Styles.DeleteText>
+                 </Styles.Product>
+                 <Styles.Product>
+                   <img src={Produto} alt="logo" />
+                   Produto 1
+                   <img src={IconeDelete} alt="logo" />
+                   <Styles.DeleteText>
+                    Excluir
+                   </Styles.DeleteText>
+                 </Styles.Product>
               </Styles.LeftSide>
               <Styles.RighttSide>
                 <Styles.InputLabel>
-                  Horário de início
-                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleInitialTime} />
+                  Nome do produto
+                  <Styles.InputContent type="texto" placeholder="Escreva o nome do produto" onChange={handleEventDescription} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
-                  Horário do fim
-                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleFinalTime} />
+                  Selecione a imagem
+                  <Styles.InputContentFile type="file" onChange={handleInitialTime} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
-                  Descrição 
-                  <Styles.InputContent type="texto" placeholder="Descreva o evento" onChange={handleEventDescription} />
+                  Selecione a categoria do produto
                 </Styles.InputLabel>
+                <Select options={options} />
                 <Styles.SubmitButton type="submit" onClick={handleClick}>
-                  CRIAR EVENTO
+                  Adicionar produto
                 </Styles.SubmitButton>
               </Styles.RighttSide> 
             </Styles.ContentContainer>
           </Styles.FormContent>
-
         </Styles.ContainerMain>
     )
 }

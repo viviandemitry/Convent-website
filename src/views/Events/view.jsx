@@ -4,6 +4,7 @@ import Header from '../../components/Header'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import ImgHome from "../../assets/images/img-home.png";
 
 const localizer = momentLocalizer(moment)
 
@@ -26,52 +27,6 @@ const myEventsList = [
       'end': new Date(2016, 2, 20, 0, 0, 0)
     },
   
-    {
-      'title': 'DTS ENDS',
-      'start': new Date(2016, 10, 6, 0, 0, 0),
-      'end': new Date(2016, 10, 13, 0, 0, 0)
-    },
-  
-    {
-      'title': 'Some Event',
-      'start': new Date(2015, 3, 9, 0, 0, 0),
-      'end': new Date(2015, 3, 9, 0, 0, 0)
-    },
-    {
-      'title': 'Conference',
-      'start': new Date(2015, 3, 11),
-      'end': new Date(2015, 3, 13),
-      desc: 'Big conference for important people'
-    },
-    {
-      'title': 'Meeting',
-      'start': new Date(2015, 3, 12, 10, 30, 0, 0),
-      'end': new Date(2015, 3, 12, 12, 30, 0, 0),
-      desc: 'Pre-meeting meeting, to prepare for the meeting'
-    },
-    {
-      'title': 'Lunch',
-      'start': new Date(2015, 3, 12, 12, 0, 0, 0),
-      'end': new Date(2015, 3, 12, 13, 0, 0, 0),
-      desc: 'Power lunch'
-    },
-    {
-      'title': 'Meeting',
-      'start': new Date(2015, 3, 12, 14, 0, 0, 0),
-      'end': new Date(2015, 3, 12, 15, 0, 0, 0)
-    },
-    {
-      'title': 'Happy Hour',
-      'start': new Date(2015, 3, 12, 17, 0, 0, 0),
-      'end': new Date(2015, 3, 12, 17, 30, 0, 0),
-      desc: 'Most important meal of the day'
-    },
-    {
-      'title': 'Dinner',
-      'start': new Date(2015, 3, 12, 20, 0, 0, 0),
-      'end': new Date(2015, 3, 12, 21, 0, 0, 0)
-    },
-  
   ];
 
 
@@ -90,52 +45,74 @@ export default function Events() {
           getEvent()
         }, [])
 
-
         return (
             <Styles.ContainerMain>
             <Header />
             <Styles.ContentContainer>
-                <Styles.LeftContainer>
-                  <Calendar
-                    localizer={localizer}
-                    events={listEvent}
-                    startAccessor="start"
-                    endAccessor="end"
-                    style={{ height: 500 }}
-                    />
-                </Styles.LeftContainer>
-                <Styles.RightContainer>
-                    <Styles.Title>
-                     Próximos Eventos
-                    </Styles.Title>
-                    <Styles.Text>
-                    <Styles.EventTitle>
-                    Feira do pastel
-                    </Styles.EventTitle>  
-                    Dia 29/09/23 à 07/10/23 <br /> 
-                    Horário: 10:00 às 17:00 <br /> 
-                    Local: Rua ...- São Paulo <br /> 
-                    Sobre o evento: ......
-                    </Styles.Text> <br />
-                    <Styles.Text>
-                    <Styles.EventTitle>
-                    Feira do pastel
-                    </Styles.EventTitle>  
-                    Dia 29/09/23 à 07/10/23 <br /> 
-                    Horário: 10:00 às 17:00 <br /> 
-                    Local: Rua ...- São Paulo <br /> 
-                    Sobre o evento: ......
-                    </Styles.Text> <br />
-                    <Styles.Text>
-                    <Styles.EventTitle>
-                    Feira do pastel
-                    </Styles.EventTitle>  
-                    Dia 29/09/23 à 07/10/23 <br /> 
-                    Horário: 10:00 às 17:00 <br /> 
-                    Local: Rua ...- São Paulo <br /> 
-                    Sobre o evento: ......
-                    </Styles.Text> <br />
-                </Styles.RightContainer>
+              <Styles.ContainerTop>
+                  <Styles.LeftContainer>
+                    <Calendar
+                      localizer={localizer}
+                      events={listEvent}
+                      startAccessor="start"
+                      endAccessor="end"
+                      style={{ height: 500 }}
+                      />
+                  </Styles.LeftContainer>
+                  <Styles.RightContainer>
+                      <Styles.Title>
+                        Próximos Eventos
+                      </Styles.Title>
+                      <Styles.Text>
+                        <Styles.EventTitle>
+                          Feira do pastel
+                        </Styles.EventTitle>  
+                        Dia 29/09/23 à 07/10/23 <br /> 
+                        Horário: 10:00 às 17:00 <br /> 
+                        Local: Rua ...- São Paulo <br /> 
+                        Sobre o evento: ......
+                      </Styles.Text> <br />
+                      <Styles.Text>
+                        <Styles.EventTitle>
+                        Feira do pastel
+                        </Styles.EventTitle>  
+                        Dia 29/09/23 à 07/10/23 <br /> 
+                        Horário: 10:00 às 17:00 <br /> 
+                        Local: Rua ...- São Paulo <br /> 
+                        Sobre o evento: ......
+                      </Styles.Text> <br />
+                  </Styles.RightContainer>
+                </Styles.ContainerTop>
+                <Styles.ContainerMidle>
+
+                </Styles.ContainerMidle>
+                <Styles.ContainerBottom>
+                      < Styles.Title>
+                       Nossos Eventos Tradicionais
+                      </Styles.Title>
+                  <Styles.ContainerImg>
+                    <img src={ImgHome} alt="Image Home" />
+                        <Styles.TextImg>
+                          <Styles.EventTitle>
+                          Feira do pastel
+                          </Styles.EventTitle>   
+                          <Styles.Text>
+                            A feira do pastel foi organizada pelo convento no mês de julio, fizemos várias barracas com comidas deliciosas como pastel, cuzcuz, brigadeiro, foi incrível!
+                          </Styles.Text>
+                        </Styles.TextImg>
+                    </Styles.ContainerImg>
+                    <Styles.ContainerImg>
+                    <img src={ImgHome} alt="Image Home" />
+                        <Styles.TextImg>
+                          <Styles.EventTitle>
+                          Feira do pastel
+                          </Styles.EventTitle>   
+                          <Styles.Text>
+                            A feira do pastel foi organizada pelo convento no mês de julio, fizemos várias barracas com comidas deliciosas como pastel, cuzcuz, brigadeiro, foi incrível!
+                          </Styles.Text>
+                        </Styles.TextImg>
+                    </Styles.ContainerImg>
+                </Styles.ContainerBottom>
             </Styles.ContentContainer>
         </Styles.ContainerMain>
         )

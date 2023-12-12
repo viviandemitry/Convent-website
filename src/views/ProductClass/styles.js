@@ -68,19 +68,52 @@ export const ProductTitle = styled.p`
     line-height: normal;
     cursor:pointer;
 `
-export const Button = styled.button`
+export const BackToProducts = styled.button`
     border: none;
-    shadow: none;
+    margin-left: ${px2vw(50)};
+
+    color: #000D3F;
+    font-family: Segoe UI;
+    font-size: ${px2vw(18)};
+    font-weight: 500;
+    cursor:pointer;
+    text-decoration: underline;
 `
 export const ImgContainer = styled.div`
-    display: flex;
-    cursor:pointer;
+    .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
     
 
-    img {
+    /* img {
         width: ${px2vw(250)};
         height: ${px2vw(250)};
-    }
+    } */
 `
 export const ProductContainer = styled.div`
     flex-direction: column;
