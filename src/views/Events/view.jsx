@@ -4,7 +4,8 @@ import Header from '../../components/Header'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import ImgHome from "../../assets/images/img-home.png";
+import BazarNatal from "../../assets/images/bazar-de-natal.png"
+import BazarCreche from "../../assets/images/bazar-na-creche.png"
 
 const localizer = momentLocalizer(moment)
 
@@ -91,24 +92,24 @@ export default function Events() {
                        Nossos Eventos Tradicionais
                       </Styles.Title>
                   <Styles.ContainerImg>
-                    <img src={ImgHome} alt="Image Home" />
+                    <img src={BazarNatal} alt="Bazar de Natal" />
                         <Styles.TextImg>
                           <Styles.EventTitle>
-                          Feira do pastel
+                          Bazar de Natal
                           </Styles.EventTitle>   
                           <Styles.Text>
-                            A feira do pastel foi organizada pelo convento no mês de julio, fizemos várias barracas com comidas deliciosas como pastel, cuzcuz, brigadeiro, foi incrível!
-                          </Styles.Text>
+                           Nosso Bazar de Natal acontece todos os anos, cheio de itens decorados lindamente com a temática de Natal! Através dele conseguimos arrecadar fundos para continuar nosso trabalho ajudando cada vez mais pessoas.
+                           </Styles.Text>
                         </Styles.TextImg>
                     </Styles.ContainerImg>
                     <Styles.ContainerImg>
-                    <img src={ImgHome} alt="Image Home" />
+                    <img src={BazarCreche} alt="Bazar na Creche" />
                         <Styles.TextImg>
                           <Styles.EventTitle>
-                          Feira do pastel
+                            Bazar na Creche
                           </Styles.EventTitle>   
                           <Styles.Text>
-                            A feira do pastel foi organizada pelo convento no mês de julio, fizemos várias barracas com comidas deliciosas como pastel, cuzcuz, brigadeiro, foi incrível!
+                            Sempre organizamos nosso bazar na creche, lá você encontra muitos itens feitos artezanalmente. 
                           </Styles.Text>
                         </Styles.TextImg>
                     </Styles.ContainerImg>

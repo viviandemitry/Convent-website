@@ -15,6 +15,10 @@ export default function Dashboard() {
         navigate("/produtosadm")
     }
 
+    function changeContact(){
+        navigate("/contatoadm")
+    }
+
         return (
             <Styles.ContainerMain>
                 <Header />
@@ -28,7 +32,7 @@ export default function Dashboard() {
                     <Styles.SubmitButton type="button" onClick={addProduct}>
                         Adicionar/Excluir Produtos
                     </Styles.SubmitButton>
-                    <Styles.SubmitButton type="button">
+                    <Styles.SubmitButton type="button" onClick={changeContact}>
                         Alterar Contato
                     </Styles.SubmitButton>
                     <Styles.SubmitButton type="button">

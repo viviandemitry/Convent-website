@@ -67,7 +67,10 @@ export const ContainerImg = styled.div`
     display:flex;
 
     img {
-        padding-bottom: 50px;
+
+        width: ${px2vw(350)};
+        height: ${px2vw(250)};
+        padding-bottom: ${px2vw(50)};
     }
 `
 
