@@ -44,10 +44,20 @@ export const ContactInfo = styled.div`
     margin-left: ${px2vw(100)};
     display: flex;
 `
-
-export const Text = styled.p`
-    /* width: ${px2vw(600)}; */
+export const TitleText = styled.h2`
+    width: ${px2vw(150)};
     margin-left: ${px2vw(50)};
+    color: #011F66;
+
+    font-family: Segoe UI;
+    font-size: ${px2vw(23)};
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+`
+export const Text = styled.p`
+    width: ${px2vw(600)};
+    margin-left: ${px2vw(10)};
     color: #011F66;
 
     font-family: Segoe UI;

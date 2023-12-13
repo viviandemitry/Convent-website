@@ -11,33 +11,33 @@ export default function Contact() {
                         Contato
                     </Styles.Title>
                     <Styles.ContactInfo>
-                        <Styles.Text>
+                        <Styles.TitleText>
                             Telefone:
-                        </Styles.Text>
+                        </Styles.TitleText>
                         <Styles.Text>
                             (11)3673-0077
                         </Styles.Text>
                     </Styles.ContactInfo>
                     <Styles.ContactInfo>
-                        <Styles.Text>
+                        <Styles.TitleText>
                             Email:
-                        </Styles.Text>
+                        </Styles.TitleText>
                         <Styles.Text>
                             segredosdoconventosc@gmail.com
                         </Styles.Text>
                     </Styles.ContactInfo>
                     <Styles.ContactInfo>
-                        <Styles.Text>
+                        <Styles.TitleText>
                             Facebook:
-                        </Styles.Text>
+                        </Styles.TitleText>
                         <Styles.Text>
                             https://web.facebook.com/Segredosconvento/
                         </Styles.Text>
                     </Styles.ContactInfo>
                     <Styles.ContactInfo>
-                        <Styles.Text>
+                        <Styles.TitleText>
                             Endereço:
-                        </Styles.Text>
+                        </Styles.TitleText>
                         <Styles.Text>
                             Av. Dr. Arnaldo, 1492 - Sumaré, São Paulo CEP: 01255-000
                         </Styles.Text>

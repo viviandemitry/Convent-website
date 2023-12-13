@@ -10,6 +10,7 @@ import CreatingEvents from './views/CreatingEvents/view';
 import Dashboard from './views/Dashboard/view';
 import ProductClass from './views/ProductClass/view';
 import CreatingProduct from './views/CreatingProduct/view';
+import ChangingContact from './views/ChangingContact/view';
 
 
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
       <Route path="/menu" element={<Dashboard/>}/>
       <Route path="/categoria/:category" element={<ProductClass/>}/>
       <Route path="/produtosadm" element={<CreatingProduct/>}/>
+      <Route path="/contatoadm" element={<ChangingContact/>}/>
    </Routes>
   );
 }
