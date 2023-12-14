@@ -6,6 +6,7 @@ import moment from 'moment'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import BazarNatal from "../../assets/images/bazar-de-natal.png"
 import BazarCreche from "../../assets/images/bazar-na-creche.png"
+import { formatCalender } from '../../utils/format'
 
 const localizer = momentLocalizer(moment)
 
@@ -30,20 +31,24 @@ const myEventsList = [
   
   ];
 
-
+  
 
 export default function Events() {
 
-        const [listEvent, setListEvent] = useState([]);
+        const [eventList, setEventList] = useState([]);
+        const [formatList, setFormatList] = useState([]);
 
-        async function getEvent(){
-            const res = await fetch('http://localhost:3000/events')
-            const data = await res.json() 
-            setListEvent(data)
-        } 
-
+        async function handleEvents(){
+          const response = await fetch('http://localhost:3000/events')
+          const dataEvent = await response.json()
+          const formatData = formatCalender(dataEvent)
+          console.log(dataEvent)
+          setEventList(dataEvent)
+          setFormatList(formatData)
+        }    
+      
         useEffect(() => {
-          getEvent()
+          handleEvents()
         }, [])
 
         return (
@@ -54,7 +59,7 @@ export default function Events() {
                   <Styles.LeftContainer>
                     <Calendar
                       localizer={localizer}
-                      events={listEvent}
+                      events={formatList}
                       startAccessor="start"
                       endAccessor="end"
                       style={{ height: 500 }}
@@ -64,24 +69,24 @@ export default function Events() {
                       <Styles.Title>
                         Próximos Eventos
                       </Styles.Title>
-                      <Styles.Text>
+                      <Styles.ContainerText>
+                        {eventList.map((event) => (
+                         <Styles.ContainerInsideText> 
                         <Styles.EventTitle>
-                          Feira do pastel
+                          {event.eventName}
                         </Styles.EventTitle>  
-                        Dia 29/09/23 à 07/10/23 <br /> 
-                        Horário: 10:00 às 17:00 <br /> 
-                        Local: Rua ...- São Paulo <br /> 
-                        Sobre o evento: ......
-                      </Styles.Text> <br />
-                      <Styles.Text>
-                        <Styles.EventTitle>
-                        Feira do pastel
-                        </Styles.EventTitle>  
-                        Dia 29/09/23 à 07/10/23 <br /> 
-                        Horário: 10:00 às 17:00 <br /> 
-                        Local: Rua ...- São Paulo <br /> 
-                        Sobre o evento: ......
-                      </Styles.Text> <br />
+                        <Styles.Text>
+                        {`Dia ${event.initialDate} à ${event.finalDate}
+
+                        Horário: ${event.initialTime} às ${event.finalTime}
+
+                        Local: ${event.eventAddress}
+
+                        Sobre o evento: ${event.eventDescription}`}
+                      </Styles.Text>
+                      </Styles.ContainerInsideText>
+                      ))}
+                    </Styles.ContainerText>
                   </Styles.RightContainer>
                 </Styles.ContainerTop>
                 <Styles.ContainerMidle>

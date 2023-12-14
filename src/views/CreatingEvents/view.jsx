@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import * as Styles from './styles';
 import Logo from "../../assets/images/logo.png";
 import IconLeft from "../../assets/icons/arrow-left.png"
@@ -17,6 +17,7 @@ export default function CreatingEvents() {
     const [finalTime, setFinalTime] = useState('');
     const [eventAddress, setEventAddress] = useState('');
     const [eventDescription, setEventDescription] = useState('');
+    const [eventList, setEventList] = useState([]);
 
     function handleBack(){
       navigate("/menu");
@@ -52,6 +53,7 @@ export default function CreatingEvents() {
 
       async function handleClick(e){
             e.preventDefault()
+            const token = sessionStorage.getItem("sessionToken")
             const data = {
                 eventName,
                 initialDate,
@@ -61,11 +63,29 @@ export default function CreatingEvents() {
                 eventAddress,
                 eventDescription
             }
-            const response = await fetch('http://localhost:3000/create-event', {method: 'POST', headers: {'Content-Type': 'application/json',},
+            const response = await fetch('http://localhost:3000/event/create', {method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
             body: JSON.stringify(data),})
             console.log(response)
-            
           }
+
+      async function handleEvents(){
+        const response = await fetch('http://localhost:3000/events')
+        const dataEvent = await response.json()
+        console.log(dataEvent)
+        setEventList(dataEvent)
+      }    
+
+      useEffect(() => {
+        handleEvents()
+      }, [])
+
+      async function handleDelete(id){
+        const token = sessionStorage.getItem("sessionToken")
+        const response = await fetch(`http://localhost:3000/event/${id}`, {method: 'DELETE', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        })
+        console.log(response)
+      }
+
 
     return (
         <Styles.ContainerMain>
@@ -87,54 +107,18 @@ export default function CreatingEvents() {
             </Styles.Titles>
             <Styles.ContentContainer>
               <Styles.EventList>
+                {eventList.map((event) => (
                 <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
+                  <img src={IconCalendar} alt="Calendario" />
+                   {event.eventName}
+                   <Styles.Delete onClick={() => handleDelete(event._id)}>
+                   <img src={IconDelete} alt="lixeira" />
                    <Styles.DeleteText>
                     Excluir
-                   </Styles.DeleteText>
+                    </Styles.DeleteText>
+                   </Styles.Delete>
                 </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
-                <Styles.Event>
-                  <img src={IconCalendar} alt="logo" />
-                   Feira do Cachorro quente
-                   <img src={IconDelete} alt="logo" />
-                   <Styles.DeleteText>
-                    Excluir
-                   </Styles.DeleteText>
-                </Styles.Event>
+                ))}
               </Styles.EventList>
               <Styles.LeftSide>
                 <Styles.InputLabel>
@@ -168,12 +152,11 @@ export default function CreatingEvents() {
                   <Styles.InputContent type="texto" placeholder="Descreva o evento" onChange={handleEventDescription} />
                 </Styles.InputLabel>
                 <Styles.SubmitButton type="submit" onClick={handleClick}>
-                  CRIAR EVENTO
+                  Criar Evento
                 </Styles.SubmitButton>
               </Styles.RighttSide> 
             </Styles.ContentContainer>
           </Styles.FormContent>
-
         </Styles.ContainerMain>
     )
 }

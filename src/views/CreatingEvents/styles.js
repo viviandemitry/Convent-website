@@ -60,19 +60,26 @@ export const Event = styled.div`
     display:flex;
     color: #000D3F;
     align-items: center;
-    cursor:pointer;
 
     img {
         width: 50px;
         height: 50px;
     }
 `
-export const DeleteText = styled.p`
+
+export const Delete = styled.div`
+    display: flex;
     color: #000D3F;
     align-items: center;
     font-size:${px2vw(12)};
-    margin-left: ${px2vw(-25)};
+    margin-left: ${px2vw(15)};
     cursor:pointer;
+`
+
+export const DeleteText = styled.p`
+    margin-left: ${px2vw(-25)};
+    align-items: center;
+    display: flex;
 `
 export const LeftSide = styled.div`
     background-color: #000D3F;
