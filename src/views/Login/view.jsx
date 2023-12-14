@@ -19,20 +19,17 @@ export default function Login() {
 
     async function login(){
         const data = {email, password}
-        const response = await fetch('http://localhost:3000', {
+        const response = await fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {'Content-type': 'application/json',},
             body: JSON.stringify(data),
         })
         const dataApi = await response.json()
         console.log(dataApi)
+        sessionStorage.setItem("sessionToken", dataApi.token)
         navigate("/menu")
 
     }
-
-    // function handleLogin(){
-    //     setIsRegister(true);
-    //   }
 
         return (
             <Styles.ContainerMain>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect} from 'react'
 import * as Styles from './styles'
 import Header from '../../components/Header'
 import ProdutosGerais from "../../assets/images/produtos-gerais.png";
@@ -10,42 +10,33 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate,  useParams } from 'react-router-dom';
 
 
 export default function ProductClass() {
 
     const navigate = useNavigate();
+    const [swiperRef, setSwiperRef] = useState(null);
+    const [slides, setSlides] = useState(
+      Array.from({ length: 100 }).map((_, index) => `Slide ${index + 1}`)
+    );
+    const [productList, setProductList] = useState([]);
+    const params = useParams();
 
     function handleBack(){
         navigate("/produtos");
     }
 
-    const [swiperRef, setSwiperRef] = useState(null);
-    const appendNumber = useRef(500);
-    const prependNumber = useRef(1);
-    // Create array with 500 slides
-    const [slides, setSlides] = useState(
-      Array.from({ length: 100 }).map((_, index) => `Slide ${index + 1}`)
-    );
-  
-    const prepend = () => {
-      setSlides([
-        `Slide ${prependNumber.current - 2}`,
-        `Slide ${prependNumber.current - 1}`,
-        ...slides,
-      ]);
-      prependNumber.current = prependNumber.current - 2;
-      swiperRef.slideTo(swiperRef.activeIndex + 2, 0);
-    };
-  
-    const append = () => {
-      setSlides([...slides, 'Slide ' + ++appendNumber.current]);
-    };
-  
-    const slideTo = (index) => {
-      swiperRef.slideTo(index - 1, 0);
-    };
+    async function handleProducts(category){
+      const response = await fetch(`http://localhost:3000/products/${params.category}`)
+      const dataProduct = await response.json()
+      console.log(dataProduct)
+      setProductList(dataProduct)
+    }    
+
+    useEffect(() => {
+      handleProducts()
+    }, [])
 
         return (
             <Styles.ContainerMain>
@@ -76,9 +67,12 @@ export default function ProductClass() {
                     navigation={true}
                     virtual
                 >
-                    {slides.map((slideContent, index) => (
-                    <SwiperSlide key={slideContent} virtualIndex={index}>
-                        {slideContent}
+                    {productList.map((product, index) => (
+                    <SwiperSlide key={product.productName} virtualIndex={index}>
+                    <img src={product.image} alt="Produto" />
+                    <Styles.NameText>
+                      {product.productName}
+                    </Styles.NameText>
                     </SwiperSlide>
                     ))}
       </Swiper>

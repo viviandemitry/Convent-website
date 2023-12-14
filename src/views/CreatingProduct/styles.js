@@ -76,13 +76,32 @@ export const Product = styled.div`
         height: 50px;
     }
 `
-export const DeleteText = styled.p`
+export const ProductName= styled.p`
+    display:flex;
+    color: #000D3F;
+    align-items: center;
+    cursor:pointer;
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+`
+export const Delete = styled.div`
+    display: flex;
     color: #000D3F;
     align-items: center;
     font-size:${px2vw(12)};
-    margin-left: ${px2vw(-25)};
+    margin-left: ${px2vw(25)};
     cursor:pointer;
 `
+
+export const DeleteText = styled.p`
+    margin-left: ${px2vw(-25)};
+    align-items: center;
+    display: flex;
+`
+
 export const InputContent = styled.input`
     border-radius: ${px2vw(5)};
     width: 100%;
@@ -168,4 +187,8 @@ export const SubmitButton = styled.button`
     font-weight: 500;
     line-height: normal;
     letter-spacing: ${px2vw(0.4)};
+`
+
+export const SelectCategory = styled.select`
+    
 `

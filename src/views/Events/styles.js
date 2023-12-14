@@ -90,11 +90,17 @@ export const EventTitle = styled.p`
     font-weight: 500;
     line-height: normal;
 `
-
+export const ContainerText = styled.div`
+    
+`
+export const ContainerInsideText = styled.div`
+    
+`
 
 export const Text = styled.p`
-    width: 80%;
+    /* width: 80%; */
     padding: 0;
+    border: solid red;
 
     font-size: ${px2vw(20)};
     

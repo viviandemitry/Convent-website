@@ -30,7 +30,7 @@ export default function Products() {
                     </Styles.Text>
                 </Styles.TextContainer>
                 <Styles.ImgContainer>
-                        <Styles.ProductContainer onClick={() => handleProd("Geral")}>
+                        <Styles.ProductContainer onClick={() => handleProd("Gerais")}>
                             <img src={ProdutosGerais} alt="Produtos Gerais" />
                             <Styles.ProductTitle>
                                 Produtos em geral

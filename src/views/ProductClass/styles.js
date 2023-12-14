@@ -16,7 +16,9 @@ export const ContainerMain = styled.div`
     }
     
 `
+export const NameText = styled.p`
 
+`
 export const ContentContainer = styled.div`
     display:flex;
     flex-direction: column;
