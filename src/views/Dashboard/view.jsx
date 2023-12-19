@@ -32,7 +32,7 @@ export default function Dashboard() {
                     <Styles.SubmitButton type="button" onClick={addProduct}>
                         Adicionar/Excluir Produtos
                     </Styles.SubmitButton>
-                    <Styles.SubmitButton type="button" onClick={changeContact}>
+                    {/* <Styles.SubmitButton type="button" onClick={changeContact}>
                         Alterar Contato
                     </Styles.SubmitButton>
                     <Styles.SubmitButton type="button">
@@ -40,7 +40,7 @@ export default function Dashboard() {
                     </Styles.SubmitButton>
                     <Styles.SubmitButton type="button">
                         Alterar Texto Página Inicial
-                    </Styles.SubmitButton>
+                    </Styles.SubmitButton> */}
                 </Styles.ContentContainer>
             </Styles.ContainerMain>
 

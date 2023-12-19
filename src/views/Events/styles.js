@@ -100,7 +100,7 @@ export const ContainerInsideText = styled.div`
 export const Text = styled.p`
     /* width: 80%; */
     padding: 0;
-    border: solid red;
+    /* border: solid red; */
 
     font-size: ${px2vw(20)};
     

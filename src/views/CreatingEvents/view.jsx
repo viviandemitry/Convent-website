@@ -127,11 +127,11 @@ export default function CreatingEvents() {
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Data de início
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleInitialDate} />
+                  <Styles.InputContent type="euro date" placeholder="Selecione a data" onChange={handleInitialDate} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Data final
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleFinalDate} />
+                  <Styles.InputContent type="euro date" placeholder="Selecione a data" onChange={handleFinalDate} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Endereço

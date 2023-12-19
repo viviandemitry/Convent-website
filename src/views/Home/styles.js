@@ -7,11 +7,10 @@ export const ContainerMain = styled.div`
     width: 100vw;
     height: 100vh;
     display:flex;
-    flex-direction: column;
 
 
     @media ${device.mobileM}{
-      
+        display:flex;
     }
     
 `
@@ -19,21 +18,41 @@ export const ContainerMain = styled.div`
 export const ContentContainer = styled.div`
     display:flex;
     width: 100%;
-    height: ${px2vw(570)};
+    height: ${px2vw(800)};
     margin-top:${px2vw(160)};
     background-color: #FFF;
+
+    @media ${device.mobileM}{
+      flex-direction: column-reverse;
+      height: 80%;
+      justify-content: flex-end;
+      align-content: center;
+    }
 `
 
 export const ImgContainer = styled.div`
-
+    margin-top: ${px2vw(50)};
+    margin-left: ${px2vw(25)};
     img {
         width: ${px2vw(700)};
         height: ${px2vw(500)};
+    }
+
+    @media ${device.mobileM}{
+        margin-top: ${px2vw(50)};
+
+        img {
+        width: ${px2vw(900)};
+        height: ${px2vw(700)};
+    }
     }
 `
 
 export const TextContainer = styled.div`
 
+    @media ${device.mobileM}{
+        margin-top: ${px2vw(50)};
+    }
 `
 
 export const Title = styled.h2`
@@ -46,6 +65,11 @@ export const Title = styled.h2`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media ${device.mobileM}{
+        margin-top: ${px2vw(50)};
+        font-size: ${px2vw(60)};
+    }
 `
 
 export const Text = styled.p`
@@ -58,4 +82,10 @@ export const Text = styled.p`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media ${device.mobileM}{
+        margin-top: ${px2vw(50)};
+        font-size: ${px2vw(40)};
+        width: 70%;
+    }
 `

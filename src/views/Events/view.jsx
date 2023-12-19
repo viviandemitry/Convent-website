@@ -7,6 +7,12 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import BazarNatal from "../../assets/images/bazar-de-natal.png"
 import BazarCreche from "../../assets/images/bazar-na-creche.png"
 import { formatCalender } from '../../utils/format'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 const localizer = momentLocalizer(moment)
 
@@ -69,6 +75,16 @@ export default function Events() {
                       <Styles.Title>
                         Próximos Eventos
                       </Styles.Title>
+                      <Swiper
+                        cssMode={true}
+                        navigation={true}
+                        pagination={true}
+                        mousewheel={true}
+                        keyboard={true}
+                        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                        className="mySwiper"
+                      >
+                       <SwiperSlide>
                       <Styles.ContainerText>
                         {eventList.map((event) => (
                          <Styles.ContainerInsideText> 
@@ -87,6 +103,8 @@ export default function Events() {
                       </Styles.ContainerInsideText>
                       ))}
                     </Styles.ContainerText>
+                    </SwiperSlide>
+                    </Swiper>
                   </Styles.RightContainer>
                 </Styles.ContainerTop>
                 <Styles.ContainerMidle>
