@@ -7,6 +7,14 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import BazarNatal from "../../assets/images/bazar-de-natal.png"
 import BazarCreche from "../../assets/images/bazar-na-creche.png"
 import { formatCalender } from '../../utils/format'
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+
 
 const localizer = momentLocalizer(moment)
 
@@ -50,7 +58,7 @@ export default function Events() {
         useEffect(() => {
           handleEvents()
         }, [])
-
+        console.log(eventList)
         return (
             <Styles.ContainerMain>
             <Header />
@@ -69,6 +77,16 @@ export default function Events() {
                       <Styles.Title>
                         Próximos Eventos
                       </Styles.Title>
+                      <Swiper
+                        cssMode={true}
+                        navigation={true}
+                        pagination={true}
+                        mousewheel={true}
+                        keyboard={true}
+                        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                        className="mySwiper"
+                      >
+                       <SwiperSlide>
                       <Styles.ContainerText>
                         {eventList.map((event) => (
                          <Styles.ContainerInsideText> 
@@ -76,17 +94,19 @@ export default function Events() {
                           {event.eventName}
                         </Styles.EventTitle>  
                         <Styles.Text>
-                        {`Dia ${event.initialDate} à ${event.finalDate}
-
-                        Horário: ${event.initialTime} às ${event.finalTime}
-
-                        Local: ${event.eventAddress}
-
-                        Sobre o evento: ${event.eventDescription}`}
+                        Dia { format(new Date(event.initialDate), "dd/MM/yy", { locale: ptBR })} à  { format(new Date(event.finalDate), "dd/MM/yy", { locale: ptBR })}
+                        <br/>                       
+                        Horário: {event.initialTime} às {event.finalTime}
+                        <br/>
+                        Local: {event.eventAddress}
+                        <br/>
+                        Sobre o evento: {event.eventDescription}
                       </Styles.Text>
                       </Styles.ContainerInsideText>
                       ))}
                     </Styles.ContainerText>
+                    </SwiperSlide>
+                    </Swiper>
                   </Styles.RightContainer>
                 </Styles.ContainerTop>
                 <Styles.ContainerMidle>

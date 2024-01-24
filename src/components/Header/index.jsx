@@ -38,7 +38,7 @@ export default function Header() {
             <Styles.AllBottons>
                 <Styles.FirstBotton>
                     <Styles.Button to="/">
-                        Sobre nós
+                    Sobre nós
                     </Styles.Button>
                 </Styles.FirstBotton>
                 <Styles.Button to="/comoajudar">

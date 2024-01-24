@@ -42,7 +42,8 @@ export default function CreatingProduct() {
             }
             const response = await fetch('http://localhost:3000/product/create', {method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`,},
             body: JSON.stringify(data),})
-            console.log(response) 
+            console.log(response)
+            handleProducts() 
           }
 
       async function handleProducts(){
@@ -61,6 +62,7 @@ export default function CreatingProduct() {
         const response = await fetch(`http://localhost:3000/product/${id}`, {method: 'DELETE', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
       })
       console.log(response)
+      handleProducts() 
     }
 
             const options = [
@@ -91,7 +93,7 @@ export default function CreatingProduct() {
             <Styles.ContentContainer>
               <Styles.LeftSide>
                 {productList.map((product) => (
-                <Styles.Product>
+                <Styles.Product key={product._id}>
                   <img src={Produto} alt="Produto" />
                   <Styles.ProductName>
                    {product.productName}
@@ -118,7 +120,7 @@ export default function CreatingProduct() {
                   Selecione a categoria do produto
                 </Styles.InputLabel>
                 <Styles.SelectCategory onChange={handleCategory}>
-                <option value="" >
+                  <option value="" >
                     Selecione uma categoria
                   </option>
                   <option value="Gerais" >
