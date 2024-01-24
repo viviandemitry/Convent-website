@@ -23,10 +23,12 @@ export const ContentContainer = styled.div`
     background-color: #FFF;
 
     @media ${device.mobileM}{
-      flex-direction: column-reverse;
-      height: 80%;
+      flex-direction: column;
+      height: 100%;
+      margin-top: -40px;
       justify-content: flex-end;
       align-content: center;
+      overflow: scroll;
     }
 `
 
@@ -40,6 +42,7 @@ export const ImgContainer = styled.div`
 
     @media ${device.mobileM}{
         margin-top: ${px2vw(50)};
+        margin-left: ${px2vw(50)};
 
         img {
         width: ${px2vw(900)};

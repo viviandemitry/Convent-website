@@ -12,6 +12,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 
 const localizer = momentLocalizer(moment)
@@ -56,7 +58,7 @@ export default function Events() {
         useEffect(() => {
           handleEvents()
         }, [])
-
+        console.log(eventList)
         return (
             <Styles.ContainerMain>
             <Header />
@@ -92,13 +94,13 @@ export default function Events() {
                           {event.eventName}
                         </Styles.EventTitle>  
                         <Styles.Text>
-                        {`Dia ${event.initialDate} à ${event.finalDate}
-
-                        Horário: ${event.initialTime} às ${event.finalTime}
-
-                        Local: ${event.eventAddress}
-
-                        Sobre o evento: ${event.eventDescription}`}
+                        Dia { format(new Date(event.initialDate), "dd/MM/yy", { locale: ptBR })} à  { format(new Date(event.finalDate), "dd/MM/yy", { locale: ptBR })}
+                        <br/>                       
+                        Horário: {event.initialTime} às {event.finalTime}
+                        <br/>
+                        Local: {event.eventAddress}
+                        <br/>
+                        Sobre o evento: {event.eventDescription}
                       </Styles.Text>
                       </Styles.ContainerInsideText>
                       ))}

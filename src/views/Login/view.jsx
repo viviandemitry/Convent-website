@@ -18,6 +18,7 @@ export default function Login() {
     }
 
     async function login(){
+        try {
         const data = {email, password}
         const response = await fetch('http://localhost:3000/login', {
             method: 'POST',
@@ -27,7 +28,11 @@ export default function Login() {
         const dataApi = await response.json()
         console.log(dataApi)
         sessionStorage.setItem("sessionToken", dataApi.token)
-        navigate("/menu")
+        navigate("/menu") 
+        }
+        catch(err) {
+            alert("Dados inválidos")
+        }
 
     }
 

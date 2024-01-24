@@ -15,10 +15,14 @@ export const ContainerMain = styled.div`
     @media ${device.mobileM}{
       flex-direction: column;
       position: relative;
+      width: ${px2vw(300)};
+      height: auto;
+      background: none;
+      padding: ${px2vw(50)};
 
       img {
-        width: ${px2vw(150)};
-        height: ${px2vw(150)};
+        width: ${px2vw(250)};
+        height: ${px2vw(250)};
       }
     }
 
@@ -30,16 +34,22 @@ export const AllBottons = styled.div`
     @media ${device.mobileM}{
         display: flex;
         flex-direction: column;
+        padding-left: 0;
+        margin-left: 0;
     }
 `
 export const FirstBotton = styled.button`
         background: none;
         border: none;
 
-        @media ${device.mobileM}{
-      
+    @media ${device.mobileM}{
+        color: #FFF;
+        font-size: ${px2vw(50)};
+        width: ${px2vw(250)};
+        padding-left: 0;
+        margin-left: 0;
+        
     }
-       
 `
 
 export const Button = styled(NavLink)`
@@ -72,7 +82,11 @@ export const Button = styled(NavLink)`
     }
 
     @media ${device.mobileM}{
-      
+        color: #FFF;
+        font-size: ${px2vw(50)};
+        padding-left: 0;
+        margin-left: 0;
+        width: ${px2vw(350)};
     }
     
 `
@@ -89,6 +103,15 @@ export const LoginButton = styled.button`
 
         &:hover {
         color: #5A9DCD;
+    }
+
+    @media ${device.mobileM}{
+        color: #FFF;
+        font-size: ${px2vw(40)};
+        border: solid #FFF;
+        width: ${px2vw(150)};
+        margin: ${px2vw(100)} ${px2vw(0)};
+        padding: ${px2vw(10)} ${px2vw(0)};
     }
        
 `
