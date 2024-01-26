@@ -59,6 +59,7 @@ export default function Events() {
           handleEvents()
         }, [])
         console.log(eventList)
+        
         return (
             <Styles.ContainerMain>
             <Header />

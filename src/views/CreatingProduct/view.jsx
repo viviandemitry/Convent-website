@@ -6,15 +6,17 @@ import IconDelete from "../../assets/icons/delete-icon.png";
 import IconLeft from "../../assets/icons/arrow-left.png"
 import { useNavigate, useLocation } from 'react-router-dom';
 import Select from 'react-select';
+import ImageUploading from 'react-images-uploading';
 
 
 export default function CreatingProduct() {
 
     const navigate = useNavigate();
     const [productName, setproductName] = useState('');
-    const [image, setImage] = useState('');
     const [category, setCategory] = useState('');
     const [productList, setProductList] = useState([]);
+    const [imagesList, setImagesList] = useState([]);
+    const maxNumber = 1;
 
     function handleBack(){
       navigate("/menu");
@@ -24,8 +26,9 @@ export default function CreatingProduct() {
       setproductName(e.target.value);
       }
     
-      function handleImage(e){
-        setImage(e.target.value);
+      function handleImagesList(imageList, addUpdateIndex){
+        setImagesList(imageList);
+        console.log(imageList, addUpdateIndex);
       }
 
       function handleCategory(e){
@@ -33,25 +36,39 @@ export default function CreatingProduct() {
       }
 
       async function handleClick(e){
+        try{
             e.preventDefault()
             const token = sessionStorage.getItem("sessionToken")
+            const imagesListData = imagesList[0] 
             const data = {
               productName,
-              image,
+              image : imagesListData.data_url,
               category
             }
+            console.log(data)
             const response = await fetch('http://localhost:3000/product/create', {method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`,},
             body: JSON.stringify(data),})
             console.log(response)
-            handleProducts() 
+            handleProducts()
+            setproductName('')
+            setImagesList([])
+            setCategory('')
+
+          } catch(err) {
+            alert("Houve um erro na criação")
           }
+        }
 
       async function handleProducts(){
+        try {
         const response = await fetch('http://localhost:3000/products')
         const dataProduct = await response.json()
         console.log(dataProduct)
         setProductList(dataProduct)
-      }    
+      }   catch(err) {
+        alert("Dados inválidos!")
+      } 
+    }
 
       useEffect(() => {
         handleProducts()
@@ -65,12 +82,12 @@ export default function CreatingProduct() {
       handleProducts() 
     }
 
-            const options = [
-              { value: "Produtos em Geral", label: "Produtos em Geral" },
-              { value: "Produtos Natalinos", label: "Produtos Natalinos" },
-              { value: "Produtos para Páscoa", label: "Produtos para Páscoa" },
-              { value: "Geleias e Antepastos", label: "Geleias e Antepastos" },
-            ];
+            // const options = [
+            //   { value: "Produtos em Geral", label: "Produtos em Geral" },
+            //   { value: "Produtos Natalinos", label: "Produtos Natalinos" },
+            //   { value: "Produtos para Páscoa", label: "Produtos para Páscoa" },
+            //   { value: "Geleias e Antepastos", label: "Geleias e Antepastos" },
+            // ];
 
     return (
         <Styles.ContainerMain>
@@ -92,9 +109,9 @@ export default function CreatingProduct() {
             </Styles.Titles>
             <Styles.ContentContainer>
               <Styles.LeftSide>
-                {productList.map((product) => (
+                {productList.map((product, index) => (
                 <Styles.Product key={product._id}>
-                  <img src={Produto} alt="Produto" />
+                  <img src={product.image} alt="Produto" />
                   <Styles.ProductName>
                    {product.productName}
                   </Styles.ProductName>
@@ -114,7 +131,45 @@ export default function CreatingProduct() {
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Selecione a imagem
-                  <Styles.InputContentFile type="file" onChange={handleImage} />
+                  <ImageUploading
+        multiple
+        value={imagesList}
+        onChange={handleImagesList}
+        maxNumber={maxNumber}
+        dataURLKey="data_url"
+      >
+        {({
+          imageList,
+          onImageUpload,
+          onImageRemoveAll,
+          onImageUpdate,
+          onImageRemove,
+          isDragging,
+          dragProps,
+        }) => (
+          // write your building UI
+          <div className="upload__image-wrapper">
+            <button type="button"
+              style={isDragging ? { color: 'red' } : undefined}
+              onClick={onImageUpload}
+              {...dragProps}
+            >
+              Escolha a imagem
+            </button>
+            &nbsp;
+            {/* <button onClick={onImageRemoveAll}>Remove all images</button> */}
+            {imageList.map((image, index) => (
+              <div key={index} className="image-item">
+                <img src={image['data_url']} alt="" width="100" />
+                <div className="image-item__btn-wrapper">
+                  {/* <button onClick={() => onImageUpdate(index)}>Update</button>
+                  <button onClick={() => onImageRemove(index)}>Remove</button> */}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </ImageUploading>
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Selecione a categoria do produto
@@ -128,6 +183,12 @@ export default function CreatingProduct() {
                   </option>
                   <option value="Natal" >
                     Produtos Natalinos
+                  </option>
+                  <option value="Natal" >
+                    Produtos de Páscoa
+                  </option>
+                  <option value="Natal" >
+                    Geléias e antepastos
                   </option>
                 </Styles.SelectCategory> 
                 <Styles.SubmitButton type="submit" onClick={handleClick}>
