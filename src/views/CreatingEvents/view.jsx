@@ -70,7 +70,7 @@ export default function CreatingEvents() {
           }
 
       async function handleEvents(){
-        const response = await fetch('http://localhost:3000/events')
+        const response = await fetch('http://localhost:3000/events/list')
         const dataEvent = await response.json()
         console.log(dataEvent)
         setEventList(dataEvent)
