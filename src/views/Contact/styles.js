@@ -10,9 +10,8 @@ export const ContainerMain = styled.div`
     display:flex;
     flex-direction: column;
 
-
     @media ${device.mobileM}{
-      
+        flex-direction: row;
     }
     
 `
@@ -22,6 +21,12 @@ export const ContentContainer = styled.div`
     height: ${px2vw(570)};
     margin-top:${px2vw(160)};
     background-color: #FFF;
+
+    @media ${device.mobileM}{
+        margin-top: 0px;
+        height: 70%;
+        padding-top:90px;
+    }
 `
 
 export const Title = styled.h2`

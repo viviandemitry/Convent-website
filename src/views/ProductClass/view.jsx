@@ -28,7 +28,7 @@ export default function ProductClass() {
     }
 
     async function handleProducts(category){
-      const response = await fetch(`http://localhost:3000/products/${params.category}`)
+      const response = await fetch(`https://donation-project-pi.vercel.app/products/${params.category}`)
       const dataProduct = await response.json()
       console.log(dataProduct)
       setProductList(dataProduct)
