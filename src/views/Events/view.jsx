@@ -47,7 +47,7 @@ export default function Events() {
         const [formatList, setFormatList] = useState([]);
 
         async function handleEvents(){
-          const response = await fetch('http://localhost:3000/events')
+          const response = await fetch('https://donation-project-pi.vercel.app/events')
           const dataEvent = await response.json()
           const formatData = formatCalender(dataEvent)
           console.log(dataEvent)

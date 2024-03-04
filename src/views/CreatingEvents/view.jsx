@@ -63,14 +63,14 @@ export default function CreatingEvents() {
                 eventAddress,
                 eventDescription
             }
-            const response = await fetch('http://localhost:3000/event/create', {method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            const response = await fetch('https://donation-project-pi.vercel.app/event/create', {method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
             body: JSON.stringify(data),})
             console.log(response)
             handleEvents()
           }
 
       async function handleEvents(){
-        const response = await fetch('http://localhost:3000/events/list')
+        const response = await fetch('https://donation-project-pi.vercel.app/events/list')
         const dataEvent = await response.json()
         console.log(dataEvent)
         setEventList(dataEvent)
@@ -82,7 +82,7 @@ export default function CreatingEvents() {
 
       async function handleDelete(id){
         const token = sessionStorage.getItem("sessionToken")
-        const response = await fetch(`http://localhost:3000/event/${id}`, {method: 'DELETE', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        const response = await fetch(`https://donation-project-pi.vercel.app/event/${id}`, {method: 'DELETE', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         })
         console.log(response)
         handleEvents()

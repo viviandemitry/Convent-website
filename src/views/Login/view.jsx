@@ -20,7 +20,7 @@ export default function Login() {
     async function login(){
         try {
         const data = {email, password}
-        const response = await fetch('http://localhost:3000/login', {
+        const response = await fetch('https://donation-project-pi.vercel.app/login', {
             method: 'POST',
             headers: {'Content-type': 'application/json',},
             body: JSON.stringify(data),

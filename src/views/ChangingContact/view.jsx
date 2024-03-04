@@ -60,7 +60,7 @@ export default function ChangingContact() {
                 eventAddress,
                 eventDescription
             }
-            const response = await fetch('http://localhost:3000/create-event', {method: 'POST', headers: {'Content-Type': 'application/json',},
+            const response = await fetch('https://donation-project-pi.vercel.app/create-event', {method: 'POST', headers: {'Content-Type': 'application/json',},
             body: JSON.stringify(data),})
             console.log(response)
             

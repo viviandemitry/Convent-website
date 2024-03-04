@@ -46,7 +46,7 @@ export default function CreatingProduct() {
               category
             }
             console.log(data)
-            const response = await fetch('http://localhost:3000/product/create', {method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`,},
+            const response = await fetch('https://donation-project-pi.vercel.app/product/create', {method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`,},
             body: JSON.stringify(data),})
             console.log(response)
             handleProducts()
@@ -61,7 +61,7 @@ export default function CreatingProduct() {
 
       async function handleProducts(){
         try {
-        const response = await fetch('http://localhost:3000/products')
+        const response = await fetch('https://donation-project-pi.vercel.app/products')
         const dataProduct = await response.json()
         console.log(dataProduct)
         setProductList(dataProduct)
@@ -76,7 +76,7 @@ export default function CreatingProduct() {
 
       async function handleDelete(id){
         const token = sessionStorage.getItem("sessionToken")
-        const response = await fetch(`http://localhost:3000/product/${id}`, {method: 'DELETE', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        const response = await fetch(`https://donation-project-pi.vercel.app/product/${id}`, {method: 'DELETE', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
       })
       console.log(response)
       handleProducts() 

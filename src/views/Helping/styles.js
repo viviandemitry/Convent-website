@@ -97,8 +97,7 @@ export const Text = styled.p`
     font-size: ${px2vw(20)};
 
     @media ${device.mobileM}{
-          width: 100%;
-
+        width: 100%;
         font-size: ${px2vw(50)};
     }
 `
