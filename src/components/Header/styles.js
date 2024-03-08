@@ -5,16 +5,12 @@ import { NavLink } from 'react-router-dom';
 
 export const ContainerMain = styled.div`
     display: flex;
-    position: fixed;
     background-color: #FFF;
-    width: 100%;
-    height: ${px2vw(83)};
+    height: ${px2vw(90)};
     padding: ${px2vw(14)};
-    margin: 0;
 
     @media ${device.mobileM}{
       flex-direction: column;
-      position: relative;
       width: ${px2vw(300)};
       height: auto;
       background: none;

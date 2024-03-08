@@ -67,6 +67,13 @@ export default function CreatingEvents() {
             body: JSON.stringify(data),})
             console.log(response)
             handleEvents()
+            setEventName('')
+            setInitialDate('')
+            setFinalDate('')
+            setInitialTime('')
+            setFinalTime('')
+            setEventAddress('')
+            setEventDescription('')
           }
 
       async function handleEvents(){
@@ -125,33 +132,33 @@ export default function CreatingEvents() {
               <Styles.LeftSide>
                 <Styles.InputLabel>
                   Nome do Evento
-                  <Styles.InputContent type="text" placeholder="Escreva o nome do Evento" onChange={handleEventName} />
+                  <Styles.InputContent type="text" placeholder="Escreva o nome do Evento" onChange={handleEventName} value={eventName} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Data de início
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleInitialDate} />
+                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleInitialDate} value={initialDate}/>
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Data final
-                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleFinalDate} />
+                  <Styles.InputContent type="date" placeholder="Selecione a data" onChange={handleFinalDate} value={finalDate} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Endereço
-                  <Styles.InputContent type="texto" placeholder="Escreva o endereço" onChange={handleEventAddress} />
+                  <Styles.InputContent type="texto" placeholder="Escreva o endereço" onChange={handleEventAddress} value={eventAddress} />
                 </Styles.InputLabel>
               </Styles.LeftSide>
               <Styles.RighttSide>
                 <Styles.InputLabel>
                   Horário de início
-                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleInitialTime} />
+                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleInitialTime} value={initialTime} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Horário do fim
-                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleFinalTime} />
+                  <Styles.InputContent type="time" placeholder="Selecione a data" onChange={handleFinalTime} value={finalTime} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Descrição 
-                  <Styles.InputContent type="texto" placeholder="Descreva o evento" onChange={handleEventDescription} />
+                  <Styles.InputContent type="texto" placeholder="Descreva o evento" onChange={handleEventDescription} value={eventDescription} />
                 </Styles.InputLabel>
                 <Styles.SubmitButton type="submit" onClick={handleClick}>
                   Criar Evento

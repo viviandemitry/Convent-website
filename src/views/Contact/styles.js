@@ -7,8 +7,6 @@ export const ContainerMain = styled.div`
     background-color: #000D3F;
     width: 100vw;
     height: 100vh;
-    display:flex;
-    flex-direction: column;
 
     @media ${device.mobileM}{
         flex-direction: row;
@@ -17,9 +15,8 @@ export const ContainerMain = styled.div`
 `
 
 export const ContentContainer = styled.div`
-    width: 100%;
     height: ${px2vw(570)};
-    margin-top:${px2vw(160)};
+    margin-top:${px2vw(50)};
     background-color: #FFF;
 
     @media ${device.mobileM}{
@@ -45,7 +42,6 @@ export const Title = styled.h2`
 `
 
 export const ContactInfo = styled.div`
-    width: 100%;
     margin-left: ${px2vw(100)};
     display: flex;
 `

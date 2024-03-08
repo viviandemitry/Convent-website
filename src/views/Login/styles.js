@@ -7,9 +7,6 @@ export const ContainerMain = styled.div`
     background-color: #000D3F;
     width: 100vw;
     height: 100vh;
-    display:flex;
-    flex-direction: column;
-
 
     @media ${device.mobileM}{
       
@@ -24,7 +21,7 @@ export const ContentContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     height: ${px2vw(570)};
-    margin-top:${px2vw(160)};
+    margin-top:${px2vw(50)};
     background-color: #FFF;
 `
 

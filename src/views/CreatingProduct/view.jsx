@@ -12,7 +12,7 @@ import ImageUploading from 'react-images-uploading';
 export default function CreatingProduct() {
 
     const navigate = useNavigate();
-    const [productName, setproductName] = useState('');
+    const [productName, setProductName] = useState('');
     const [category, setCategory] = useState('');
     const [productList, setProductList] = useState([]);
     const [imagesList, setImagesList] = useState([]);
@@ -23,7 +23,7 @@ export default function CreatingProduct() {
     }
 
     function handleProductName(e){
-      setproductName(e.target.value);
+      setProductName(e.target.value);
       }
     
       function handleImagesList(imageList, addUpdateIndex){
@@ -40,6 +40,7 @@ export default function CreatingProduct() {
             e.preventDefault()
             const token = sessionStorage.getItem("sessionToken")
             const imagesListData = imagesList[0] 
+            console.log(category)
             const data = {
               productName,
               image : imagesListData.data_url,
@@ -50,7 +51,7 @@ export default function CreatingProduct() {
             body: JSON.stringify(data),})
             console.log(response)
             handleProducts()
-            setproductName('')
+            setProductName('')
             setImagesList([])
             setCategory('')
 
@@ -81,13 +82,6 @@ export default function CreatingProduct() {
       console.log(response)
       handleProducts() 
     }
-
-            // const options = [
-            //   { value: "Produtos em Geral", label: "Produtos em Geral" },
-            //   { value: "Produtos Natalinos", label: "Produtos Natalinos" },
-            //   { value: "Produtos para Páscoa", label: "Produtos para Páscoa" },
-            //   { value: "Geleias e Antepastos", label: "Geleias e Antepastos" },
-            // ];
 
     return (
         <Styles.ContainerMain>
@@ -127,7 +121,7 @@ export default function CreatingProduct() {
               <Styles.RighttSide>
                 <Styles.InputLabel>
                   Nome do produto
-                  <Styles.InputContent type="texto" placeholder="Escreva o nome do produto" onChange={handleProductName} />
+                  <Styles.InputContent type="text" placeholder="Escreva o nome do produto" onChange={handleProductName} value={productName} />
                 </Styles.InputLabel>
                 <Styles.InputLabel>
                   Selecione a imagem
@@ -162,8 +156,6 @@ export default function CreatingProduct() {
               <div key={index} className="image-item">
                 <img src={image['data_url']} alt="" width="100" />
                 <div className="image-item__btn-wrapper">
-                  {/* <button onClick={() => onImageUpdate(index)}>Update</button>
-                  <button onClick={() => onImageRemove(index)}>Remove</button> */}
                 </div>
               </div>
             ))}
@@ -174,7 +166,7 @@ export default function CreatingProduct() {
                 <Styles.InputLabel>
                   Selecione a categoria do produto
                 </Styles.InputLabel>
-                <Styles.SelectCategory onChange={handleCategory}>
+                <Styles.SelectCategory onChange={handleCategory} name={'categoryProduct'} value={category}>
                   <option value="" >
                     Selecione uma categoria
                   </option>
@@ -184,10 +176,10 @@ export default function CreatingProduct() {
                   <option value="Natal" >
                     Produtos Natalinos
                   </option>
-                  <option value="Natal" >
+                  <option value="Pascoa" >
                     Produtos de Páscoa
                   </option>
-                  <option value="Natal" >
+                  <option value="Geleias" >
                     Geléias e antepastos
                   </option>
                 </Styles.SelectCategory> 

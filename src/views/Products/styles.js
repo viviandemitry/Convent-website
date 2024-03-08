@@ -5,11 +5,8 @@ import { device } from "../../utils/brakePoints";
 
 export const ContainerMain = styled.div`
     background-color: #000D3F;
-    width: 100vw;
+    width: 100vw; 
     height: 100vh;
-    display:flex;
-    flex-direction: column;
-
 
     @media ${device.mobileM}{
       
@@ -20,9 +17,9 @@ export const ContainerMain = styled.div`
 export const ContentContainer = styled.div`
     display:flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
     height: ${px2vw(570)};
-    margin-top:${px2vw(160)};
+    margin-top:${px2vw(50)};
     background-color: #FFF;
 `
 
@@ -70,12 +67,11 @@ export const ProductTitle = styled.p`
 `
 export const Button = styled.button`
     border: none;
-    shadow: none;
 `
+
 export const ImgContainer = styled.div`
     display: flex;
-    cursor:pointer;
-    
+    cursor:pointer;    
 
     img {
         width: ${px2vw(250)};

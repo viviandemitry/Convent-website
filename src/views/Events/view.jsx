@@ -18,28 +18,26 @@ import { ptBR } from "date-fns/locale";
 
 const localizer = momentLocalizer(moment)
 
-const myEventsList = [
-    {
-      'title': 'All Day Event very long title',
-      'allDay': true,
-      'start': new Date(2023, 10, 0),
-      'end': new Date(2023, 10, 1)
-    },
-    {
-      'title': 'Long Event',
-      'start': new Date(2015, 3, 7),
-      'end': new Date(2015, 3, 10)
-    },
+// const myEventsList = [
+//     {
+//       'title': 'All Day Event very long title',
+//       'allDay': true,
+//       'start': new Date(2023, 10, 0),
+//       'end': new Date(2023, 10, 1)
+//     },
+//     {
+//       'title': 'Long Event',
+//       'start': new Date(2015, 3, 7),
+//       'end': new Date(2015, 3, 10)
+//     },
   
-    {
-      'title': 'DTS STARTS',
-      'start': new Date(2016, 2, 13, 0, 0, 0),
-      'end': new Date(2016, 2, 20, 0, 0, 0)
-    },
+//     {
+//       'title': 'DTS STARTS',
+//       'start': new Date(2016, 2, 13, 0, 0, 0),
+//       'end': new Date(2016, 2, 20, 0, 0, 0)
+//     },
   
-  ];
-
-  
+//   ];  
 
 export default function Events() {
 
@@ -110,9 +108,6 @@ export default function Events() {
                     </Swiper>
                   </Styles.RightContainer>
                 </Styles.ContainerTop>
-                <Styles.ContainerMidle>
-
-                </Styles.ContainerMidle>
                 <Styles.ContainerBottom>
                       < Styles.Title>
                        Nossos Eventos Tradicionais

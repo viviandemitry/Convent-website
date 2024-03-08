@@ -4,10 +4,8 @@ import { device } from "../../utils/brakePoints";
 
 export const ContainerMain = styled.div`
     background-color: #000D3F;
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
-    display:flex;
-
 
     @media ${device.mobileM}{
         display:flex;
@@ -19,7 +17,7 @@ export const ContentContainer = styled.div`
     display:flex;
     width: 100%;
     height: ${px2vw(800)};
-    margin-top:${px2vw(160)};
+    margin-top:${px2vw(50)};
     background-color: #FFF;
 
     @media ${device.mobileM}{
