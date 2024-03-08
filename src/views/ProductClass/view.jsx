@@ -42,42 +42,42 @@ export default function ProductClass() {
             <Styles.ContainerMain>
                 <Header />
                 <Styles.ContentContainer>
-                <Styles.TextContainer>
-                    <Styles.Title>
-                        Produtos
-                    </Styles.Title>
-                    <Styles.Text>
-                    <br />
-                    Entre em contato conosco para saber mais!
-                    </Styles.Text>
-                    <Styles.BackToProducts onClick={handleBack}>
-                        Retornar para produtos
-                    </Styles.BackToProducts>
-                </Styles.TextContainer>
-                <Styles.ImgContainer>
-                <Swiper
-                    modules={[Virtual, Navigation, Pagination]}
-                    onSwiper={setSwiperRef}
-                    slidesPerView={4}
-                    centeredSlides={true}
-                    spaceBetween={30}
-                    pagination={{
-                    type: 'fraction',
-                    }}
-                    navigation={true}
-                    virtual
-                >
-                    {productList.map((product, index) => (
-                    <SwiperSlide key={product.productName} virtualIndex={index}>
-                    <img src={product.image} alt="Produto" />
-                    <Styles.NameText>
-                      {product.productName}
-                    </Styles.NameText>
-                    </SwiperSlide>
-                    ))}
-      </Swiper>
-                </Styles.ImgContainer>
-            </Styles.ContentContainer>
+                    <Styles.TextContainer>
+                        <Styles.Title>
+                            Produtos
+                        </Styles.Title>
+                        <Styles.Text>
+                        <br />
+                        Entre em contato conosco para saber mais!
+                        </Styles.Text>
+                        <Styles.BackToProducts onClick={handleBack}>
+                            Retornar para produtos
+                        </Styles.BackToProducts>
+                    </Styles.TextContainer>
+                    <Styles.ImgContainer>
+                        <Swiper
+                            modules={[Virtual, Navigation, Pagination]}
+                            onSwiper={setSwiperRef}
+                            slidesPerView={4}
+                            centeredSlides={true}
+                            spaceBetween={30}
+                            pagination={{
+                            type: 'fraction',
+                            }}
+                            navigation={true}
+                            virtual
+                        >
+                            {productList.map((product, index) => (
+                            <SwiperSlide key={product.productName} virtualIndex={index}>
+                                <img src={product.image} alt="Produto" />
+                                <Styles.NameText>
+                                    {product.productName}
+                                </Styles.NameText>
+                            </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </Styles.ImgContainer>
+                </Styles.ContentContainer>
             </Styles.ContainerMain>
 
         )

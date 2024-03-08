@@ -5,10 +5,7 @@ import { device } from "../../utils/brakePoints";
 
 export const ContainerMain = styled.div`
     background-color: #000D3F;
-    width: 100vw;
     height: 100vh;
-    display:flex;
-    flex-direction: column;
 
     @media ${device.mobileM}{
         flex-direction: row;
@@ -21,7 +18,7 @@ export const ContentContainer = styled.div`
     flex-direction: row;
     width: 100%;
     height: ${px2vw(570)};
-    margin-top:${px2vw(160)};
+    margin-top:${px2vw(50)};
     background-color: #FFF;
 
     @media ${device.mobileM}{
